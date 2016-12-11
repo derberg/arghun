@@ -1,4 +1,5 @@
-  /*eslint no-console: "error" */
+/*eslint no-console: "error" */
+'use strict';
 
 const fsOps = require('./fsOps'),
   objOps = require('./objOps');

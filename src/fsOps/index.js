@@ -1,3 +1,4 @@
+/*eslint require-yield: "error" */
 'use strict';
 
 const fs = require('fs');
