@@ -23,9 +23,29 @@ function isBlacklisted(str, arr) {
   }
 }
 
+function getCustomDetails(o, details) {
+
+  const detailsSum = {};
+
+  return details.reduce( (detailsSum, el) => {
+
+    let total = 0;
+
+    Object.keys(o).forEach((key) => {
+
+      if (key.match(el.pattern)) total = total + o[key];
+    });
+    
+    detailsSum[el.name] = total;
+
+    return detailsSum;
+  }, {});
+}
+
 const objOps = {
   getTotal,
-  isBlacklisted
+  isBlacklisted,
+  getCustomDetails
 };
 
 module.exports = objOps;

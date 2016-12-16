@@ -10,7 +10,7 @@ Blazingly fast and nifty directories traverser :)
 1. git clone https://github.com/derberg/zlicz.git
 2. cd zlicz
 3. npm install (just kidding, there are no dependencies to install)
-4. npm run sample (for now hardcoded to the following dir `../devportal/devportal/src/documents`. Patience my padawan)
+4. npm run sample (for now hardcoded to the following dir `../devportal/devportal/tmp/latestResultRepo`. Patience my padawan)
 
 ### API
 
