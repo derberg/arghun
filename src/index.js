@@ -7,9 +7,9 @@ let result = {};
 
 async function walkDir(path, opt){
 
-  try {
+  const pathStats = await fsOps.readInfo(path);
 
-    const pathStats = await fsOps.readInfo(path);
+  try {
 
     if (pathStats.isFile()) return true;
 
@@ -48,7 +48,7 @@ async function walkDir(path, opt){
   }
   catch(err) {
 
-    console.log('Read error', err);
+    console.log(err);
   }
 }
 
