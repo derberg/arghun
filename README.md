@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/derberg/zlicz.svg?branch=master)](https://travis-ci.org/derberg/zlicz)
 
+
+![Arghun](arghun.png)
+
 Blazingly fast and nifty directories traverser :)
 
 * Zero dependencies
