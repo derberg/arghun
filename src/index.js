@@ -29,18 +29,10 @@ async function walkDir(path, opt){
 
         if (opt && opt.blFiles && objOps.isBlacklisted(name, opt.blFiles)) break;
 
-        if (pathResult) {
+        result = (opt && opt.dirMap)
+          ? _listDir(result, pathResult, path, name)
+          : _countDir(result, pathResult, path);
 
-          result[path] = ++pathResult;
-          //for listing files instead of counting them
-          //pathResult.push(name)
-          //result[path] = pathResult;
-        } else {
-
-          result[path] = 1;
-          //for listing files instead of counting them
-          //result[path] = [name];
-        }
       }
     }
 
@@ -51,5 +43,39 @@ async function walkDir(path, opt){
     console.log(err);
   }
 }
+
+function _countDir(result, pathResult, path) {
+
+  if (pathResult) {
+
+    result[path] = ++pathResult;
+    //for listing files instead of counting them
+    //pathResult.push(name)
+    //result[path] = pathResult;
+  } else {
+
+    result[path] = 1;
+    //for listing files instead of counting them
+    //result[path] = [name];
+  }
+
+  return result;
+}
+
+function _listDir(result, pathResult, path, name) {
+
+  if (pathResult) {
+
+    pathResult.push(name)
+    result[path] = pathResult;
+  } else {
+
+    result[path] = [name];
+  }
+
+  return result;
+}
+
+
 
 module.exports = walkDir;

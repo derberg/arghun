@@ -2,13 +2,17 @@
 
 function getTotal(o) {
 
+  let isString;
   let total = 0;
 
   Object.keys(o).forEach((key) => {
+
     total = total + o[key];
   });
 
-  return total;
+  isString = typeof total === 'string';
+
+  return isString ? total.slice(1).split(',') : total;
 }
 
 function isBlacklisted(str, arr) {
@@ -35,7 +39,7 @@ function getCustomDetails(o, details) {
 
       if (key.match(el.pattern)) total = total + o[key];
     });
-    
+
     detailsSum[el.name] = total;
 
     return detailsSum;
