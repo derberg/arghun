@@ -6,16 +6,25 @@ const path = './test/testData';
 
 async function testRunner(path) {
 
+  console.time('Test run time');
+
   try {
 
-    await testCases.walkDirBasic(path);
+    for (const test in testCases) {
+      if (testCases.hasOwnProperty(test)) {
+
+        await testCases[test](path);
+      }
+    }
+
   }
   catch (err) {
 
     process.exit(1);
   }
 
-  console.log('All test passing. Long live the king');
+  console.log('All tests passing. Long live the king');
+  console.timeEnd('Test run time');
 }
 
 

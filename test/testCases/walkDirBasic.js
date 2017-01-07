@@ -32,7 +32,7 @@ async function walkDirBasic(path) {
   try {
 
     const result = await arghun.walkDir(path);
-    assert.deepEqual(result, expected, 'Basic walkDir failed');
+    assert.deepEqual(result, expected, 'walkDir failed with basic flow');
   }
 
   catch(err) {
