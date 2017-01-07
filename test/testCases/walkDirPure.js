@@ -35,8 +35,9 @@ async function walkDirPure(path) {
   }
 
   catch(err) {
-
+    
     console.log(err);
+    throw new Error(err);
   }
 }
 

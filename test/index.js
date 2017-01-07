@@ -12,10 +12,8 @@ async function testRunner(path) {
   }
   catch (err) {
 
-    throw new Error(err);
+    process.exit(1);
   }
-
-
 }
 
 
