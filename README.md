@@ -13,7 +13,7 @@ Blazingly fast and nifty directories traverser :)
 ### Quick start
 
 1. git clone https://github.com/derberg/arghun.git
-2. cd zlicz
+2. cd arghun
 3. npm install (just kidding, there are no dependencies to install)
 4. npm run sample (for now hardcoded to the following dir `../devportal/devportal/tmp/latestResultRepo`. Patience my padawan)
 
