@@ -2,7 +2,7 @@ Blazingly fast and nifty directories traverser :)
 
 * Zero dependencies
 * Zero callback
-* Node 7.2
+* Node 7.x
 * Clear and beautiful async-await
 
 ### Quick start
@@ -23,3 +23,7 @@ Arguments:
  * blDir - Blacking of dirs you want to ignore during traversing
 
 [Sample usage](samples/index.js)
+
+### Run tests
+
+`npm test`
