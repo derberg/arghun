@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/derberg/zlicz.svg?branch=master)](https://travis-ci.org/derberg/zlicz)
+[![Build Status](https://travis-ci.org/derberg/arghun.svg?branch=master)](https://travis-ci.org/derberg/arghun)
 
 
 ![Arghun](arghun.png)
