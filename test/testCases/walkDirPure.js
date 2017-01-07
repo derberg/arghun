@@ -24,7 +24,7 @@ const expected = { './test/testData/A-characters': 7,
   './test/testData/F-characters/even-more-f': 4,
   './test/testData/F-characters/moremoremore': 3,
   './test/testData/F-characters/my-man': 1,
-  './test/testData/G-characters': 75 };
+  './test/testData/G-characters': 7 };
 
 async function walkDirPure(path) {
 
@@ -35,7 +35,7 @@ async function walkDirPure(path) {
   }
 
   catch(err) {
-    
+
     console.log(err);
     throw new Error(err);
   }

@@ -14,6 +14,8 @@ async function testRunner(path) {
 
     process.exit(1);
   }
+
+  console.log('All test passing. Long live the king');
 }
 
 
