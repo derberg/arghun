@@ -2,7 +2,7 @@
 'use strict';
 
 const assert = require('assert');
-const zlicz = require('../../');
+const arghun = require('../../');
 const expected = { './test/testData/A-characters': 7,
   './test/testData/A-characters/even-more-A': 6,
   './test/testData/A-characters/how-abou-moreA': 6,
@@ -19,6 +19,7 @@ const expected = { './test/testData/A-characters': 7,
   './test/testData/D-characters': 7,
   './test/testData/D-characters/even-more-d': 6,
   './test/testData/D-characters/more-and-more-D': 6,
+  './test/testData/D-characters/my-man': 1,
   './test/testData/E-characters': 12,
   './test/testData/F-characters': 5,
   './test/testData/F-characters/even-more-f': 4,
@@ -26,12 +27,12 @@ const expected = { './test/testData/A-characters': 7,
   './test/testData/F-characters/my-man': 1,
   './test/testData/G-characters': 7 };
 
-async function walkDirPure(path) {
+async function walkDirBasic(path) {
 
   try {
 
-    const result = await zlicz.walkDir(path);
-    assert.deepEqual(result, expected, 'Pure walkDir failed');
+    const result = await arghun.walkDir(path);
+    assert.deepEqual(result, expected, 'Basic walkDir failed');
   }
 
   catch(err) {
@@ -41,4 +42,4 @@ async function walkDirPure(path) {
   }
 }
 
-module.exports = walkDirPure;
+module.exports = walkDirBasic;

@@ -2,8 +2,8 @@
 
 const walkDir = require('./src');
 
-const zlicz = {
+const arghun = {
   walkDir
 };
 
-module.exports = zlicz;
+module.exports = arghun;

@@ -1,7 +1,7 @@
 /*eslint no-console: "error" */
 'use strict';
 
-const zlicz = require('../');
+const arghun = require('../');
 const objOps = require('../src/objOps');
 const path = '../devportal/devportal/tmp/latestResultRepo';
 const opt = {
@@ -41,7 +41,7 @@ async function start(path) {
 
   try {
     console.time(path);
-    const sumTree = await zlicz.walkDir(path, opt);
+    const sumTree = await arghun.walkDir(path, opt);
     const total = objOps.getTotal(sumTree);
     const patternsSums = objOps.getCustomDetails(sumTree, details);
     console.log('sum', sumTree);

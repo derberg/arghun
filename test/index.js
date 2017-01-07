@@ -1,14 +1,14 @@
 'use strict';
 
 const assert = require('assert');
-const walkDirPure = require('./testCases/walkDirPure.js');
+const testCases = require('./testCases');
 const path = './test/testData';
 
 async function testRunner(path) {
 
   try {
 
-    await walkDirPure(path);
+    await testCases.walkDirBasic(path);
   }
   catch (err) {
 
