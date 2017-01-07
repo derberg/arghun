@@ -31,7 +31,7 @@ async function walkDirPure(path) {
   try {
 
     const result = await zlicz.walkDir(path);
-    return assert.deepEqual(result, expected, 'Pure walkDir failed');
+    assert.deepEqual(result, expected, 'Pure walkDir failed');
   }
 
   catch(err) {

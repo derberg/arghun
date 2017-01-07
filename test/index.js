@@ -6,7 +6,15 @@ const path = './test/testData';
 
 async function testRunner(path) {
 
-  await walkDirPure(path);
+  try {
+
+    await walkDirPure(path);
+  }
+  catch (err) {
+
+    throw new Error(err);
+  }
+
 
 }
 
