@@ -3,9 +3,8 @@
 
 const zlicz = require('../');
 const objOps = require('../src/objOps');
-const path = './test/testData';
+const path = '../devportal/devportal/tmp/latestResultRepo';
 const opt = {
-  dirMap: false,
   blFiles: ['^index\.', 'meta-inf', 'api.raml', 'apireference.html', 'client.zip', 'apiconsole.html'],
   blDir: ['.git', 'apiconsole', 'apinotebooks', 'blog', 'bower_components', 'build', 'error', 'fonts', 'images', 'img', 'internal', 'lunr', 'matrix', 'placeholders', 'scripts', 'styles', 'services/beta', 'services/eu', 'services/us', 'latest$', '/client', '/download', 'vendor']
 };
@@ -43,7 +42,6 @@ async function start(path) {
   try {
     console.time(path);
     const sumTree = await zlicz.walkDir(path, opt);
-
     const total = objOps.getTotal(sumTree);
     const patternsSums = objOps.getCustomDetails(sumTree, details);
     console.log('sum', sumTree);
