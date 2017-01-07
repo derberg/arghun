@@ -4,7 +4,7 @@
   "description": "Module to count files in a given directory and as a result provide a JSON file with numbers, locations and filetypes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --harmony-async-await test/index",
     "sample": "time node --harmony-async-await samples/index"
   },
   "author": "Lukasz Gornicki (derberg)",
