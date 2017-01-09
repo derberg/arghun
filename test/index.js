@@ -2,18 +2,20 @@
 
 const assert = require('assert');
 const testCases = require('./testCases');
-const path = './test/testData';
+const testDataPath = './test/testData/testDirectory';
+const testObjCount = require('./testData/objOpsTestObjectCount.json');
+const testObjMap = require('./testData/objOpsTestObjectMap.json');
 
-async function testRunner(path) {
+async function testRunner(testDataPath) {
 
   console.time('Test run time');
 
   try {
 
-    for (const test in testCases) {
-      if (testCases.hasOwnProperty(test)) {
+    for (const test in testCases.walkDirTests) {
+      if (testCases.walkDirTests.hasOwnProperty(test)) {
 
-        await testCases[test](path);
+        await testCases.walkDirTests[test](testDataPath);
       }
     }
 
@@ -23,9 +25,11 @@ async function testRunner(path) {
     process.exit(1);
   }
 
+  testCases.objOpsTests.getTotalCount(testObjCount);
+
   console.log('All tests passing. Long live the king');
   console.timeEnd('Test run time');
 }
 
 
-testRunner(path);
+testRunner(testDataPath);

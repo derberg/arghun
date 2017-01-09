@@ -1,17 +1,11 @@
 'use strict';
 
-const walkDirBasic = require('./walkDirBasic.js');
-const walkDirFileNamesMap = require('./walkDirFileNamesMap.js');
-const walkDirBlacklistFiles = require('./walkDirBlacklistFiles.js');
-const walkDirBlacklistDirs = require('./walkDirBlacklistDirs.js');
-const walkDirBlacklistBoth = require('./walkDirBlacklistBoth.js');
+const walkDirTests = require('./walkDir');
+const objOpsTests = require('./objOps');
 
 const testCases = {
-  walkDirBasic,
-  walkDirFileNamesMap,
-  walkDirBlacklistFiles,
-  walkDirBlacklistDirs,
-  walkDirBlacklistBoth
+  walkDirTests,
+  objOpsTests
 };
 
 module.exports = testCases;

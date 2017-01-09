@@ -2,7 +2,6 @@
 'use strict';
 
 const arghun = require('../');
-const objOps = require('../src/objOps');
 const path = '../devportal/devportal/tmp/latestResultRepo';
 const opt = {
   blFiles: ['^index\.', 'meta-inf', 'api.raml', 'apireference.html', 'client.zip', 'apiconsole.html'],
@@ -42,8 +41,8 @@ async function start(path) {
   try {
     console.time(path);
     const sumTree = await arghun.walkDir(path, opt);
-    const total = objOps.getTotal(sumTree);
-    const patternsSums = objOps.getCustomDetails(sumTree, details);
+    const total = arghun.getTotal(sumTree);
+    const patternsSums = arghun.getCustomDetails(sumTree, details);
     console.log('sum', sumTree);
     console.log('pattern', patternsSums);
     console.log('total', total);

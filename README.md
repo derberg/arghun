@@ -19,13 +19,14 @@ Blazingly fast and nifty directories traverser :)
 
 ### API
 
-`zlicz.WalkDir(path[, opt])`
+`arghun.walkDir(path[, opt])`
 
 Arguments:
 * `path` - Relative path to the dir you want to traverse
 * `opt` - Object with additional options like:
  * blFiles - Blacklist of files you not want to ignore during traversing
  * blDir - Blacking of dirs you want to ignore during traversing
+ * dirMap - Instead of counting down the list of files in folders, set to `true` to get list of filenames
 
 [Sample usage](samples/index.js)
 
