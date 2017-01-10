@@ -26,6 +26,7 @@ async function testRunner(testDataPath) {
   }
 
   testCases.objOpsTests.getTotalCount(testObjCount);
+  testCases.objOpsTests.getTotalNames(testObjMap);
 
   console.log('All tests passing. Long live the king');
   console.timeEnd('Test run time');

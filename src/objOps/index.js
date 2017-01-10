@@ -2,17 +2,18 @@
 
 function getTotal(o) {
 
-  let isString;
-  let total = 0;
+  let isNum;
 
-  Object.keys(o).forEach((key) => {
+  const total = Object.values(o).reduce((a, b) => {
 
-    total = total + o[key];
+    isNum = Number.isInteger(b);
+
+    return isNum
+      ?  a + b
+      :  a.concat(b);
   });
 
-  isString = typeof total === 'string';
-
-  return isString ? total.slice(1).split(',') : total;
+  return total;
 }
 
 function isBlacklisted(str, arr) {

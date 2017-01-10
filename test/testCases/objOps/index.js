@@ -1,11 +1,15 @@
 'use strict';
 
-const getTotalCount = require('./getTotal.js');
+const getTotalTests = require('./getTotal.js');
 const isBlacklisted = require('./isBlacklisted.js');
 const getCustomDetails = require('./getCustomDetails.js');
 
+const getTotalCount = getTotalTests.getTotalCount;
+const getTotalNames = getTotalTests.getTotalNames;
+
 const objOpsTests = {
   getTotalCount,
+  getTotalNames,
   isBlacklisted,
   getCustomDetails
 };

@@ -101,7 +101,7 @@ const expected =  { './test/testData/testDirectory/A-characters':
      './test/testData/testDirectory/F-characters/even-more-f':
       [ 'Clone Trooper Fives.html',
         'FN-2199.html',
-        'Fode,js',
+        'Fode.js',
         'Kit Fisto.html' ],
      './test/testData/testDirectory/F-characters/moremoremore': [ 'Bib Fortuna.html', 'Commander Fox.html', 'FX-7.html' ],
      './test/testData/testDirectory/F-characters/my-man': [ 'Finn.js' ],
