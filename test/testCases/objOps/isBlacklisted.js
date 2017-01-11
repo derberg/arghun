@@ -42,8 +42,8 @@ function isBlacklistedFalse(str, blacklist) {
 
 
 
-const isBlacklistedTest = {
+const isBlacklistedTests = {
   isBlacklistedFalse,
   isBlacklistedTrue
 }
-module.exports = isBlacklistedTest;
+module.exports = isBlacklistedTests;

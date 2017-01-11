@@ -1,5 +1,17 @@
 'use strict';
 
+function isBlacklisted(str, arr) {
+
+  if (arr.findIndex(_strCheck) === -1) return false;
+
+  return true;
+
+  function _strCheck(el) {
+
+    return str.match(el);
+  }
+}
+
 function getTotal(o) {
 
   let isNum;
@@ -16,30 +28,28 @@ function getTotal(o) {
   return total;
 }
 
-function isBlacklisted(str, arr) {
+function getCustomDetails(o, patterns) {
 
-  if (arr.findIndex(_strCheck) === -1) return false;
-
-  return true;
-
-  function _strCheck(el) {
-
-    return str.match(el);
-  }
-}
-
-function getCustomDetails(o, details) {
-
+  const oKeys = Object.keys(o);
   const detailsSum = {};
+  const isNum = Number.isInteger(o[oKeys[0]]);
+  const initialVal = isNum ? 0 : [];
+  let isMatchPattern;
 
-  return details.reduce( (detailsSum, el) => {
+  return patterns.reduce( (detailsSum, el) => {
 
-    let total = 0;
+    const total = oKeys.reduce((sum, b) => {
 
-    Object.keys(o).forEach((key) => {
+      isMatchPattern = b.match(el.pattern);
 
-      if (key.match(el.pattern)) total = total + o[key];
-    });
+      if(isMatchPattern)
+        isNum
+          ?  sum += o[b]
+          :  sum = sum.concat(o[b]);
+
+      return sum;
+
+    }, initialVal);
 
     detailsSum[el.name] = total;
 

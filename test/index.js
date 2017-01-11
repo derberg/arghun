@@ -30,6 +30,8 @@ async function testRunner(testDataPath) {
   testCases.objOpsTests.getTotalNames(testObjMap);
   testCases.objOpsTests.isBlacklistedTrue(testObjData.blacklist.strTrue, testObjData.blacklist.blist);
   testCases.objOpsTests.isBlacklistedFalse(testObjData.blacklist.strFalse, testObjData.blacklist.blist);
+  testCases.objOpsTests.getCustomDetailsCount(testObjCount, testObjData.customDetailsPatterns);
+  testCases.objOpsTests.getCustomDetailsNames(testObjMap, testObjData.customDetailsPatterns);
 
   console.log('All tests passing. Long live the king');
   console.timeEnd('Test run time');
