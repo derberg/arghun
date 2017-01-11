@@ -5,6 +5,7 @@ const testCases = require('./testCases');
 const testDataPath = './test/testData/testDirectory';
 const testObjCount = require('./testData/objOpsTestObjectCount.json');
 const testObjMap = require('./testData/objOpsTestObjectMap.json');
+const testObjData = require('./testData/testObjData.json');
 
 async function testRunner(testDataPath) {
 
@@ -27,6 +28,8 @@ async function testRunner(testDataPath) {
 
   testCases.objOpsTests.getTotalCount(testObjCount);
   testCases.objOpsTests.getTotalNames(testObjMap);
+  testCases.objOpsTests.isBlacklistedTrue(testObjData.blacklist.strTrue, testObjData.blacklist.blist);
+  testCases.objOpsTests.isBlacklistedFalse(testObjData.blacklist.strFalse, testObjData.blacklist.blist);
 
   console.log('All tests passing. Long live the king');
   console.timeEnd('Test run time');

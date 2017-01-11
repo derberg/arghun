@@ -1,0 +1,8 @@
+{
+  "blacklist": {
+    "blist": ["\/more-B\/", "BabaJaga", "boruta"],
+    "strTrue": "./test/testData/testDirectory/B-characters/more-B/inside-B",
+    "strFalse": "rokita"
+  },
+  "customDetails": {}
+}
