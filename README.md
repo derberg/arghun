@@ -8,6 +8,7 @@ Blazingly fast and nifty directories traverser :)
 * Zero dependencies
 * Zero callback
 * Node 7.x
+* ES6 and beyond
 * Clear and beautiful async-await
 
 ### Quick start

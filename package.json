@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node --harmony-async-await test/index",
-    "sample": "time node --harmony-async-await samples/index"
+    "sample": "node --harmony-async-await samples/index"
   },
   "author": "Lukasz Gornicki (derberg)",
   "license": "MIT"
