@@ -1,5 +1,7 @@
 'use strict';
 
+const helpers = require('../helpers');
+
 function isBlacklisted(str, arr) {
 
   if (arr.findIndex(_strCheck) === -1) return false;
@@ -13,6 +15,12 @@ function isBlacklisted(str, arr) {
 }
 
 function getTotal(o) {
+
+  if (!o) {
+
+    helpers.log('There is no object provided', o);
+    return;
+  }
 
   let isNum;
 
@@ -30,10 +38,16 @@ function getTotal(o) {
 
 function getCustomDetails(o, patterns) {
 
-  const oKeys = Object.keys(o);
-  const detailsSum = {};
-  const isNum = Number.isInteger(o[oKeys[0]]);
-  const initialVal = isNum ? 0 : [];
+  if (!o || !patterns) {
+    
+    helpers.log('There is no object or patterns provided', o);
+    return;
+  }
+
+  const oKeys = Object.keys(o),
+    detailsSum = {},
+    isNum = Number.isInteger(o[oKeys[0]]),
+    initialVal = isNum ? 0 : [];
   let isMatchPattern;
 
   return patterns.reduce( (detailsSum, el) => {

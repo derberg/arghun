@@ -1,15 +1,16 @@
 'use strict';
 
-const assert = require('assert');
-const testCases = require('./testCases');
-const testDataPath = './test/testData/testDirectory';
-const testObjCount = require('./testData/objOpsTestObjectCount.json');
-const testObjMap = require('./testData/objOpsTestObjectMap.json');
-const testObjData = require('./testData/testObjData.json');
+const assert = require('assert'),
+  testCases = require('./testCases'),
+  testDataPath = './test/testData/testDirectory',
+  testObjCount = require('./testData/objOpsTestObjectCount.json'),
+  testObjMap = require('./testData/objOpsTestObjectMap.json'),
+  testObjData = require('./testData/testObjData.json'),
+  helpers = require('../src/helpers');
 
 async function testRunner(testDataPath) {
 
-  console.time('Test run time');
+  helpers.logTime('Test run time');
 
   try {
 
@@ -33,8 +34,9 @@ async function testRunner(testDataPath) {
   testCases.objOpsTests.getCustomDetailsCount(testObjCount, testObjData.customDetailsPatterns);
   testCases.objOpsTests.getCustomDetailsNames(testObjMap, testObjData.customDetailsPatterns);
 
-  console.log('All tests passing. Long live the king');
-  console.timeEnd('Test run time');
+  helpers.log('=====================================');
+  helpers.log('All tests passing. Long live the king');
+  helpers.logTimeEnd('Test run time');
 }
 
 

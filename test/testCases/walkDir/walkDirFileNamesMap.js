@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const opt = { dirMap: true };
@@ -120,13 +120,13 @@ async function walkDirFileNamesMap(path) {
 
     const result = await arghun.walkDir(path, opt);
     assert.deepEqual(result, expected, 'walkDir failed with dirMap option set to true');
-    console.log("walkDir with dirMap option set to true - successful");
+    helpers.log('walkDir with dirMap option set to true - successful');
 
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }

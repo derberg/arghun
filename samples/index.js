@@ -36,17 +36,21 @@ const details = [
 
 console.log(`Your current execution location is: ${__dirname}`);
 
-async function start(path) {
+async function sample(path) {
 
   try {
-    console.time(path);
+    console.time('walkDir');
     const sumTree = await arghun.walkDir(path, opt);
-    const total = arghun.getTotal(sumTree);
-    const patternsSums = arghun.getCustomDetails(sumTree, details);
+    console.timeEnd('walkDir');
     console.log('sum', sumTree);
-    console.log('pattern', patternsSums);
+    console.time('getTotal');
+    const total = arghun.getTotal(sumTree);
+    console.timeEnd('getTotal');
     console.log('total', total);
-    console.timeEnd(path);
+    console.time('getCustomDetails');
+    const patternsSums = arghun.getCustomDetails(sumTree, details);
+    console.timeEnd('getCustomDetails');
+    console.log('pattern', patternsSums);
   }
 
   catch(err) {
@@ -55,4 +59,4 @@ async function start(path) {
   }
 }
 
-start(path);
+sample(path);

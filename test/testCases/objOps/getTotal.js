@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const expectedCount = 101;
@@ -112,12 +112,12 @@ function getTotalCount(obj) {
 
     const result = arghun.getTotal(obj);
     assert.equal(result, expectedCount, 'getTotal failed with counting');
-    console.log("getTotal with counting - successful");
+    helpers.log('getTotal with counting - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }
@@ -128,12 +128,12 @@ function getTotalNames(obj) {
 
     const result = arghun.getTotal(obj);
     assert.deepEqual(result, expectedNames, 'getTotal failed with names');
-    console.log("getTotal with names - successful");
+    helpers.log('getTotal with names - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }
@@ -141,5 +141,6 @@ function getTotalNames(obj) {
 const getTotalTests = {
   getTotalCount,
   getTotalNames
-}
+};
+
 module.exports = getTotalTests;

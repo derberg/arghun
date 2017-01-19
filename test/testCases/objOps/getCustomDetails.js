@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const expectedCount = { 'A-characters': 19,
@@ -125,12 +125,12 @@ function getCustomDetailsCount(obj, pattern) {
 
     const result = arghun.getCustomDetails(obj, pattern);
     assert.deepEqual(result, expectedCount, 'getCustomDetails failed with counting');
-    console.log("getCustomDetails with counting - successful");
+    helpers.log('getCustomDetails with counting - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }
@@ -141,12 +141,12 @@ function getCustomDetailsNames(obj, pattern) {
 
     const result = arghun.getCustomDetails(obj, pattern);
     assert.deepEqual(result, expectedNames, 'getCustomDetails failed with names');
-    console.log("getCustomDetails with names - successful");
+    helpers.log('getCustomDetails with names - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }
@@ -154,5 +154,6 @@ function getCustomDetailsNames(obj, pattern) {
 const getCustomDetailsTests = {
   getCustomDetailsCount,
   getCustomDetailsNames
-}
+};
+
 module.exports = getCustomDetailsTests;

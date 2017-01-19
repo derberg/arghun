@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const opt = {
@@ -28,12 +28,12 @@ async function walkDirBlacklistBoth(path) {
 
     const result = await arghun.walkDir(path, opt);
     assert.deepEqual(result, expected, 'walkDir failed with files and dirs blacklist');
-    console.log("walkDir with files and dirs blacklist - successful");
+    helpers.log('walkDir with files and dirs blacklist - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }

@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const expected = { './test/testData/testDirectory/A-characters': 7,
@@ -33,12 +33,12 @@ async function walkDirBasic(path) {
 
     const result = await arghun.walkDir(path);
     assert.deepEqual(result, expected, 'walkDir failed with basic flow');
-    console.log("walkDir with basic flow - successful");
+    helpers.log('walkDir with basic flow - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }

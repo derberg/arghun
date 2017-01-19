@@ -1,8 +1,8 @@
-/*eslint no-console: "error" */
 'use strict';
 
 const fsOps = require('./fsOps'),
-  objOps = require('./objOps');
+  objOps = require('./objOps'),
+  helpers = require('./helpers');
 
 async function walkDir(path, opt){
 
@@ -41,7 +41,7 @@ async function walkDir(path, opt){
   }
   catch(err) {
 
-    console.log(err);
+    helpers.log('Failed during traversing directories', err);
   }
 }
 
@@ -50,7 +50,8 @@ function _countDir(res, pathResult, path) {
   if (pathResult) {
 
     res[path] = ++pathResult;
-  } else {
+  }
+  else {
 
     res[path] = 1;
   }
@@ -64,7 +65,8 @@ function _listDir(res, pathResult, path, name) {
 
     pathResult.push(name);
     res[path] = pathResult;
-  } else {
+  }
+  else {
 
     res[path] = [name];
   }

@@ -1,7 +1,9 @@
 /*eslint require-yield: "error" */
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs'),
+	helpers = require('../helpers');
+
 
 async function readDir(path) {
 
@@ -10,6 +12,7 @@ async function readDir(path) {
 		fs.readdir(path, function(err, result) {
 
 			if (err) {
+				helpers.log(err);
 				reject(err);
 			} else {
 				resolve(result);
@@ -25,6 +28,7 @@ function readInfo(path) {
 		fs.stat(path, function(err, result) {
 
 			if (err) {
+				helpers.log(err);
 				reject(err);
 			} else {
 				resolve(result);

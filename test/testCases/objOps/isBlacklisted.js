@@ -1,6 +1,6 @@
-/*eslint no-console: "error" */
 'use strict';
 
+const helpers = require('../../../src/helpers');
 const assert = require('assert');
 const arghun = require('../../../');
 const expectedTrue = true;
@@ -13,12 +13,12 @@ function isBlacklistedTrue(str, blacklist) {
 
     const result = arghun.isBlacklisted(str, blacklist);
     assert.equal(result, expectedTrue, 'isBlacklisted with true failes');
-    console.log("isBlacklisted with true - successful");
+    helpers.log('isBlacklisted with true - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 }
@@ -29,12 +29,12 @@ function isBlacklistedFalse(str, blacklist) {
 
     const result = arghun.isBlacklisted(str, blacklist);
     assert.equal(result, expectedFalse, 'isBlacklisted with false failes');
-    console.log("isBlacklisted with false - successful");
+    helpers.log('isBlacklisted with false - successful');
   }
 
   catch(err) {
 
-    console.log(err);
+    helpers.log(err);
     throw new Error(err);
   }
 
@@ -45,5 +45,6 @@ function isBlacklistedFalse(str, blacklist) {
 const isBlacklistedTests = {
   isBlacklistedFalse,
   isBlacklistedTrue
-}
+};
+
 module.exports = isBlacklistedTests;
