@@ -11,6 +11,9 @@ Blazingly fast and nifty directories traverser :)
 * ES6 and beyond
 * Clear and beautiful async-await
 
+Traversing and listing of 101 files takes 0.02sec
+Traversing and listing of 422241 files takes 96sec
+
 ### Quick start
 
 1. git clone https://github.com/derberg/arghun.git
@@ -24,7 +27,7 @@ Blazingly fast and nifty directories traverser :)
 
 Arguments:
 * `path` - Relative path to the dir you want to traverse
-* `opt` - Object with additional options like:
+* `opt` - Object with more options like:
  * blFiles - Blacklist of files you not want to ignore during traversing
  * blDir - Blacking of dirs you want to ignore during traversing
  * dirMap - Instead of counting down the list of files in folders, set to `true` to get list of filenames
@@ -34,3 +37,7 @@ Arguments:
 ### Run tests
 
 `npm test`
+
+### Debugging
+
+To enable logging add the following environment variable: `ARGHUN_LOG=true`

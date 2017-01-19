@@ -9,7 +9,7 @@ function log(msg, moreMsg){
     return;
   }
 
-  if (process.env.NODE_ENV === 'debug') {
+  if (process.env.ARGHUN_LOG === 'true') {
 
     moreMsg ? console.log(msg, moreMsg) : console.log(msg);
   }
@@ -24,7 +24,7 @@ function logTime(id){
     return;
   }
 
-  if (process.env.NODE_ENV === 'debug') console.time(id);
+  if (process.env.ARGHUN_LOG === 'true') console.time(id);
 
 }
 
@@ -36,7 +36,7 @@ function logTimeEnd(id){
     return;
   }
 
-  if (process.env.NODE_ENV === 'debug') console.timeEnd(id);
+  if (process.env.ARGHUN_LOG === 'true') console.timeEnd(id);
 
 }
 
