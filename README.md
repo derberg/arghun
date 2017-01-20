@@ -6,20 +6,24 @@
 Blazingly fast and nifty directories traverser :)
 
 * Zero dependencies
-* Zero callback
+* Zero callbacks
 * Node 7.x
 * ES6 and beyond
 * Clear and beautiful async-await
 
 Traversing and listing of 101 files takes 0.02sec
+
 Traversing and listing of 422241 files takes 96sec
 
 ### Quick start
 
-1. git clone https://github.com/derberg/arghun.git
-2. cd arghun
-3. npm install (just kidding, there are no dependencies to install)
-4. npm run sample (for now hardcoded to the following dir `../devportal/devportal/tmp/latestResultRepo`. Patience my padawan)
+1. `git clone https://github.com/derberg/arghun.git`
+2. `cd arghun`
+3. `npm install` (just kidding, there are no dependencies to install)
+4. `npm run sample` or `SAMPLE_PATH='../' npm run sample`:
+ * `SAMPLE_PATH`: Set path for traverse, default points to test sample data
+ * `SAMPLE_OPT`: Set to true to use the options hardcoded in the sample file, default is {}
+ * `SAMPLE_PATTERN`: Set to true to use the options hardcoded in the sample file, default is {}
 
 ### API
 

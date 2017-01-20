@@ -2,12 +2,12 @@
 'use strict';
 
 const arghun = require('../');
-const path = '../devportal/devportal/tmp/latestResultRepo';
-const opt = {
+const path = process.env.SAMPLE_PATH || './test/testData/testDirectory';
+const opt = process.env.SAMPLE_OPT === 'true' ? {
   blFiles: ['^index\.', 'meta-inf', 'api.raml', 'apireference.html', 'client.zip', 'apiconsole.html'],
   blDir: ['.git', 'apiconsole', 'apinotebooks', 'blog', 'bower_components', 'build', 'error', 'fonts', 'images', 'img', 'internal', 'lunr', 'matrix', 'placeholders', 'scripts', 'styles', 'services/beta', 'services/eu', 'services/us', 'latest$', '/client', '/download', 'vendor']
-};
-const details = [
+} : {};
+const details = process.env.SAMPLE_PATTERN === 'true' ? [
   {
     name: "Services",
     pattern: "latestResultRepo/services/"
@@ -32,9 +32,7 @@ const details = [
     name: "Solutions",
     pattern: "latestResultRepo/solutions/"
   }
-];
-
-console.log(`Your current execution location is: ${__dirname}`);
+] : [];
 
 async function sample(path) {
 
