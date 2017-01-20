@@ -10,27 +10,27 @@ const opt = process.env.SAMPLE_OPT === 'true' ? {
 const details = process.env.SAMPLE_PATTERN === 'true' ? [
   {
     name: "Services",
-    pattern: "latestResultRepo/services/"
+    pattern: "devportal_out/services/"
   },
   {
     name: "Tools",
-    pattern: "latestResultRepo/tools/"
+    pattern: "devportal_out/tools/"
   },
   {
     name: "Release Notes",
-    pattern: "latestResultRepo/rn/"
+    pattern: "devportal_out/rn/"
   },
   {
     name: "Getting Started",
-    pattern: "latestResultRepo/gettingstarted/"
+    pattern: "devportal_out/gettingstarted/"
   },
   {
     name: "Overview",
-    pattern: "latestResultRepo/overview/"
+    pattern: "devportal_out/overview/"
   },
   {
     name: "Solutions",
-    pattern: "latestResultRepo/solutions/"
+    pattern: "devportal_out/solutions/"
   }
 ] : [];
 
