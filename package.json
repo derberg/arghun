@@ -1,12 +1,29 @@
 {
-  "name": "zlicz",
-  "version": "0.0.1",
+  "name": "arghun",
+  "version": "1.0.0",
   "description": "Module to count files in a given directory and as a result provide a JSON file with numbers, locations and filetypes",
   "main": "index.js",
   "scripts": {
     "test": "ARGHUN_LOG=true node --harmony-async-await test/index",
-    "sample": "node --harmony-async-await samples/index"
+    "sample": "node --harmony-async-await samples/index",
+    "release:patch": "npm test && npm run release:bump-patch && npm run release:publish && npm run release:push",
+    "release:minor": "npm test && npm run release:bump-minor && npm run release:publish && npm run release:push",
+    "release:bump-patch": "npm version patch -m 'Upgraded to %s version'",
+    "release:bump-minor": "npm version minor -m 'Upgraded to %s version'",
+    "release:publish": "npm publish",
+    "release:push": "git push origin master && git push origin --tags"
+  },
+  "engines": {
+    "node": "7.x"
   },
   "author": "Lukasz Gornicki (derberg)",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": ["directories","files","traversing"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/derberg/arghun.git"
+  },
+  "bugs": {
+    "url": "https://github.com/derberg/arghun/issues"
+  }
 }

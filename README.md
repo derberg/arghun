@@ -141,3 +141,11 @@ Arguments:
 ### Debugging
 
 To enable logging add the following environment variable: `ARGHUN_LOG=true`
+
+### Releasing
+
+```
+npm run release:patch # for patch release
+npm run release:minor # for minor release
+
+```
