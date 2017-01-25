@@ -11,9 +11,9 @@ Blazingly fast and nifty directories traverser :)
 * ES6 and beyond
 * Clear and beautiful async-await
 
-Traversing and listing of 101 files takes 0.02sec
+Traversing and listing of 101 files (23 directories) takes 13-15ms (0.01sec)
 
-Traversing and listing of 422241 files takes 96sec
+Traversing and listing of 671921 files (114117 directories) takes 68-70sec
 
 ### Quick start
 
