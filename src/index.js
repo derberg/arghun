@@ -4,10 +4,25 @@ const fsOps = require('./fsOps'),
   objOps = require('./objOps'),
   helpers = require('./helpers');
 
+/**
+ * Dir crawler that recursively per dir name lists all file names or sum number
+ * of those. Specific blacklists of dirs and files that should be ignored can be
+ * applied through the opt object
+ * @param  {String}  path Path to a directory that is to be crawled
+ * @param  {Object}  opt  Object that can contain 3 different keys:
+ *                        blFiles - Array with filenames that are blacklisted
+ *                        and should be ignored during crawling. Regex is supported.
+ *                        blDir - Array with directories that are blacklisted
+ *                        and should be ignored during crawling. Regex is supported.
+ *                        dirMap - By default function returns an object with lists
+ *                        of all dirs and sum number of files in it. By setting
+ *                        this option to true, you change this behaviour and
+ *                        instead of sum, the array of filenames becomes a value.
+ * @return {Promise}
+ */
 async function walkDir(path, opt){
 
   try {
-
     let result = {};
     const pathStats = await fsOps.readInfo(path);
     if (pathStats.isFile()) return true;

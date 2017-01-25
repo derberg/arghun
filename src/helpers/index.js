@@ -1,10 +1,16 @@
 /*eslint no-console: "error" */
 'use strict';
 
+/**
+ * console.log wrapper that makes sure log is displayed only with environment
+ * variable ARGHUN_LOG=true
+ * @param  {String} msg     Log message
+ * @param  {String} moreMsg Additional log message
+ */
 function log(msg, moreMsg){
 
   if (!msg) {
-
+    console.
     console.log('No message for logger provided');
     return;
   }
@@ -16,6 +22,11 @@ function log(msg, moreMsg){
 
 }
 
+/**
+ * console.time wrapper that makes sure log is used only with environment
+ * variable ARGHUN_LOG=true
+ * @param  {String} msg     Log identifier
+ */
 function logTime(id){
 
   if (!id) {
@@ -28,6 +39,12 @@ function logTime(id){
 
 }
 
+/**
+ * console.timeEnd wrapper that makes sure log is used only with environment
+ * variable ARGHUN_LOG=true
+ * @param  {String} msg     Log identifier that must be the same as the one used
+ *                          in logTime function
+ */
 function logTimeEnd(id){
 
   if (!id) {

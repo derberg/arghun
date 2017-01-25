@@ -4,7 +4,11 @@
 const fs = require('fs'),
 	helpers = require('../helpers');
 
-
+/**
+ * Promise wrapper for fs.readdir function
+ * @param  {String}  path Directory path
+ * @return {Promise}
+ */
 async function readDir(path) {
 
 	return new Promise( (resolve, reject) => {
@@ -21,6 +25,11 @@ async function readDir(path) {
 	});
 }
 
+/**
+ * Promise wrapper for fs.stat function
+ * @param  {String}  path Directory path
+ * @return {Promise}
+ */
 function readInfo(path) {
 
 	return new Promise( (resolve, reject) => {
