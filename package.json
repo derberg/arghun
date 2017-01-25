@@ -1,6 +1,6 @@
 {
   "name": "arghun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module to count files in a given directory and as a result provide a JSON file with numbers, locations and filetypes",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,11 @@
   },
   "author": "Lukasz Gornicki (derberg)",
   "license": "MIT",
-  "keywords": ["directories","files","traversing"],
+  "keywords": [
+    "directories",
+    "files",
+    "traversing"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/derberg/arghun.git"
