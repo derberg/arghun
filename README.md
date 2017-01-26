@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/derberg/arghun.svg?branch=master)](https://travis-ci.org/derberg/arghun)
+[![npm version](https://badge.fury.io/js/arghun.svg)](https://badge.fury.io/js/arghun)
+[![npm](https://img.shields.io/npm/dm/arghun.svg)](https://www.npmjs.com/package/arghun)
+[![npm](https://img.shields.io/npm/dt/arghun.svg)](https://www.npmjs.com/package/arghun)
 
 
 ![Arghun](arghun.png)
@@ -14,6 +17,10 @@ Blazingly fast and nifty directories traverser :)
 Traversing and listing of 101 files (23 directories) takes 13-15ms (0.01sec)
 
 Traversing and listing of 671921 files (114117 directories) takes 68-70sec
+
+### Install
+
+`npm install arghun`
 
 ### Quick start
 
