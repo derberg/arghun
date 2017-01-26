@@ -22,7 +22,30 @@ Traversing and listing of 671921 files (114117 directories) takes 68-70sec
 
 `npm install arghun`
 
-### Quick start
+### Quick usage
+
+Async/await in Node.js 7.x is hidden behind the harmony flag. Keep that in mind when running your code. Otherwise compiler complains on the async function definition.
+
+1. Create a 'myWalk.js' in your Node.js project
+2. Add this content to the project:
+ ```
+ const arghun = require('arghun');
+ const myPath = './';
+
+ async function sampleWalkDir(path) {
+
+  console.time('Walking and getting total number of files took');
+  const walkDirResult = await arghun.walkDir(path);
+  const sumAllFiles = await arghun.getTotal(walkDirResult);
+  console.timeEnd('Walking and getting total number of files took');
+  console.log('Number of files in the directory', sumAllFiles);
+ }
+
+ sampleWalkDir(myPath);
+ ```
+3. Run the code with the following call: `node --harmony-async-await myWalk.js`
+
+### Quick start with project development
 
 1. `git clone https://github.com/derberg/arghun.git`
 2. `cd arghun`
