@@ -13,10 +13,11 @@ Blazingly fast and nifty directories traverser :)
 * Node 7.x
 * ES6 and beyond
 * Clear and beautiful async-await
-
+* Based on `for` loop (`while` performance was exactly the same but with 2 extra lines of code)
+```
 Traversing and listing of 101 files (23 directories) takes 13-15ms (0.01sec)
-
 Traversing and listing of 671921 files (114117 directories) takes 68-70sec
+```
 
 ### Install
 
