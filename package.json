@@ -4,8 +4,8 @@
   "description": "Module to count files in a given directory and as a result provide a JSON file with numbers, locations and filetypes",
   "main": "index.js",
   "scripts": {
-    "test": "ARGHUN_LOG=true node --harmony-async-await test/index",
-    "sample": "node --harmony-async-await samples/index",
+    "test": "ARGHUN_LOG=true node test/index",
+    "sample": "node samples/index",
     "release:patch": "npm test && npm run release:bump-patch && npm run release:publish && npm run release:push",
     "release:minor": "npm test && npm run release:bump-minor && npm run release:publish && npm run release:push",
     "release:bump-patch": "npm version patch -m 'Upgraded to %s version'",

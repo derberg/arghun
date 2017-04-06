@@ -25,7 +25,9 @@ Traversing and listing of 671921 files (114117 directories) takes 68-70sec
 
 ### Quick usage
 
-Async/await in Node.js 7.x is hidden behind the harmony flag. Keep that in mind when running your code. Otherwise compiler complains on the async function definition.
+Async/await in Node.js <7.6 is hidden behind the harmony flag (`--harmony-async-await`). Keep that in mind when running your code. Otherwise compiler complains on the async function definition.
+
+Since 7.6 no harmony flag is needed, I suggest you to upgrade to latest version with latest v8 engine.
 
 1. Create a 'myWalk.js' in your Node.js project
 2. Add this content to the project:
@@ -44,7 +46,7 @@ Async/await in Node.js 7.x is hidden behind the harmony flag. Keep that in mind 
 
  sampleWalkDir(myPath);
  ```
-3. Run the code with the following call: `node --harmony-async-await myWalk.js`
+3. Run the code with the following call: `node myWalk.js`
 
 ### Quick start with project development
 
