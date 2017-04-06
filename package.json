@@ -1,6 +1,6 @@
 {
   "name": "arghun",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Module to count files in a given directory and as a result provide a JSON file with numbers, locations and filetypes",
   "main": "index.js",
   "scripts": {
