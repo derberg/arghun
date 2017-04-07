@@ -16,7 +16,7 @@ Blazingly fast and nifty directories traverser :)
 * Based on `for` loop (`while` performance was exactly the same but with 2 extra lines of code)
 ```
 Traversing of 101 files (23 directories) takes 13-15ms (0.01sec)
-Traversing of 1000000 (1M) files (231248 directories) takes 161257.469ms (161sec) -> measured with perf test run on travis.
+Traversing of 1000000 (1M) files (231248 directories) takes 121884.282ms (121sec) -> measured with perf test run on travis.
 ```
 
 ### Install
