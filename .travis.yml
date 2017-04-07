@@ -5,4 +5,4 @@ node_js:
 script:
 - npm test
 - git clone https://github.com/derberg/arghun-perftest-sampledata.git
-- SAMPLE_PATH='arghun-perftest-sampledata/sampleData' npm run sample
+- SAMPLE_PATH='arghun-perftest-sampledata/sampleData' SILENT_SUM_TREE=true npm run sample

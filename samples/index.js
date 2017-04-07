@@ -2,6 +2,7 @@
 'use strict';
 
 const arghun = require('../');
+const silentSumTreeLog = process.env.SILENT_SUM_TREE === 'true';
 const path = process.env.SAMPLE_PATH || './test/testData/testDirectory';
 const opt = process.env.SAMPLE_OPT === 'true' ? {
   blFiles: ['^index\.', 'meta-inf', 'api.raml', 'apireference.html', 'client.zip', 'apiconsole.html'],
@@ -40,7 +41,7 @@ async function sample(path) {
     console.time('walkDir');
     const sumTree = await arghun.walkDir(path, opt);
     console.timeEnd('walkDir');
-    console.log('sum', sumTree);
+    !silentSumTreeLog && console.log('sum', sumTree);
     console.time('getTotal');
     const total = arghun.getTotal(sumTree);
     console.timeEnd('getTotal');
